@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>督办反馈</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/scale.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        $(document).ready(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            window.onresize = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }
+            $('.tab').on('click', 'li', function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.panel > div').eq($(this).index()).css('display', 'block').siblings().css('display',
+                    'none');
+            })
+
+
+            var arr = $('.tab-body ul li .top p');
+            for (let i = 0; i < arr.length; i++) {
+                var len = arr.eq(i).text().length;
+                if (len > 70) {
+                    arr.eq(i).text(arr.eq(i).text().slice(0, 70) + '.........');
+                }
+            }
+            //var guanzhu = true;
+            // $('.tab-body ul li .top a:nth-child(2)').on('click',function(params) {
+            //     if (guanzhu === true) {
+            //         $(this).removeClass('sel').addClass('cancel').text('未审批');
+            //         guanzhu = false;
+            //     }else{
+            //         $(this).removeClass('cancel').addClass('sel').text('已审批');
+            //         guanzhu = true;
+            //     }
+
+            //     return false;
+            // })
+        });
+
+        function toFeedbackTask(type) {
+            window.location = '../feedbackTask/feedbackTask.html';
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="indexNav">
+        <ol class="tab">
+            <li class="active">
+                <span>变更审核</span>
+            </li>
+            <li>
+                <span>我监控的任务</span>
+            </li>
+        </ol>
+    </nav>
+    <div class="wrapper">
+        <div class="tab-body">
+            <div class="panel">
+                <div class="p1" style="display:block">
+                    <ul>
+                        <li class="item" onclick="toFeedbackTask(id);">
+                            <div class="top">
+                                <p>内容</p>
+
+                                <span class="sel">已审批</span>
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>完成时限</span>
+                                    <span class="">2017-10-10</span>
+                                </div>
+                                <div class="right">
+                                    <span>监控领导：</span>
+                                    <span>张三</span>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="p2" style="display:none">
+                    <ul>
+                        <li class="item" onclick="toFeedbackTask(id);">
+                            <div class="top">
+                                <p>内容</p>
+
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>完成时限</span>
+                                    <span class="">2017-10-10</span>
+                                </div>
+                                <div class="right">
+                                    <span>监控领导：</span>
+                                    <span>张三</span>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer style="display:none">
+        <ul>
+            <li>
+                <a href="">项目组自行采购</a>
+            </li>
+            <li>
+                <a href="">采购管部组织采购</a>
+            </li>
+            <li>
+                <a href="">全部</a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

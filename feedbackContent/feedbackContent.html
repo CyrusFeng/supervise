@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>反馈内容</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/scale.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        $(document).ready(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            window.onresize = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }
+            var $title = $('.text span').eq(1);
+            var des = $title.text();
+            var $textarea = $('.text textarea');
+
+            $('.text').on('click', function () {
+                $title.text('');
+                $textarea.css('opacity', '1');
+            });
+            $textarea.on('blur', function () {
+                if ($textarea.val() === '') {
+                    $title.text(des);
+                    $textarea.css('opacity', '0');
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <form action="">
+                <div class="text">
+                    <div class="label">
+                        <span>反馈内容：</span>
+                    </div>
+                    <div class="content">
+                        <span>点击输入任务内容</span>
+                        <textarea rows="" cols=""></textarea>
+                    </div>
+
+                </div>
+                <div class="sub">
+                    <a href="">提交</a>
+                </div>
+                
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>督办反馈</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/scale.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        $(document).ready(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            window.onresize = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }
+            $('.tab').on('click', 'li', function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.panel > div').eq($(this).index()).css('display', 'block').siblings().css('display',
+                    'none');
+            })
+            var $title1 = $('.p1 .text span').eq(1);
+            var $textarea1 = $('.p1 .text textarea');
+
+            $('.p1 .text').on('click', function () {
+                $title1.css('opacity', '0');
+                $textarea1.css('opacity', '1');
+            });
+            $textarea1.on('blur', function () {
+                if ($textarea1.val() === '') {
+                    $title1.css('opacity', '1');
+                    $textarea1.css('opacity', '0');
+                }
+            })
+            var $title2 = $('.p2 .text span').eq(1);
+            var $textarea2 = $('.p2 .text textarea');
+
+            $('.p2 .text').on('click', function () {
+                $title2.css('opacity', '0');
+                $textarea2.css('opacity', '1');
+            });
+            $textarea2.on('blur', function () {
+                if ($textarea2.val() === '') {
+                    $title2.css('opacity', '1');
+                    $textarea2.css('opacity', '0');
+                }
+            })
+            var $title3 = $('.p3 .text span').eq(1);
+            var $textarea3 = $('.p3 .text textarea');
+
+            $('.p3 .text').on('click', function () {
+                $title3.css('opacity', '0');
+                $textarea3.css('opacity', '1');
+            });
+            $textarea3.on('blur', function () {
+                if ($textarea3.val() === '') {
+                    $title3.css('opacity', '1');
+                    $textarea3.css('opacity', '0');
+                }
+            })
+            $('#rili1').on('input',function() {
+                $('.p1 label span').text($('#rili1').val())
+            })
+            $('#rili2').on('input',function() {
+                $('.p3 label span').text($('#rili2').val())
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <nav class="indexNav">
+        <ol class="tab">
+            <li class="active">
+                <span>完成申请</span>
+            </li>
+            <li>
+                <span>终止申请</span>
+            </li>
+            <li>
+                <span>延时申请</span>
+            </li>
+        </ol>
+    </nav>
+    <div class="wrapper">
+
+        <div class="tab-body">
+            <div class="panel">
+                <div class="p1" style="display:block">
+                    <form action="">
+                        <div class="search">
+                            <div class="top-selects">
+                                <div class="left">
+                                    <label for="rili1">
+                                        <span>请选择完成时间</span>
+                                    </label>
+
+                                    <input type="date" name="date" id="rili1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text">
+                            <div class="label">
+                                <span>反馈内容：</span>
+                            </div>
+                            <div class="content">
+                                <span>点击输入反馈的内容</span>
+                                <textarea rows="" cols=""></textarea>
+                            </div>
+
+                        </div>
+                        <div class="sub">
+                            <a href="">提交</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="p2" style="display:none">
+                    <form action="">
+                        <div class="text">
+                            <div class="label">
+                                <span>中止申请：</span>
+                            </div>
+                            <div class="content">
+                                <span>点击输入终止申请的说明</span>
+                                <textarea rows="" cols=""></textarea>
+                            </div>
+                        </div>
+                        <div class="sub">
+                            <a href="">提交</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="p3" style="display:none">
+                    <form action="">
+                        <div class="search">
+                            <div class="top-selects">
+                                <div class="left">
+                                    <label for="rili2">
+                                        <span>请选择完成时间</span>
+                                    </label>
+
+                                    <input type="date" name="date" id="rili2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text">
+                            <div class="label">
+                                <span>延时申请：</span>
+                            </div>
+                            <div class="content">
+                                <span>点击输入延时申请的说明</span>
+                                <textarea rows="" cols=""></textarea>
+                            </div>
+                        </div>
+                        <div class="sub">
+                            <a href="">提交</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer style="display:none">
+        <ul>
+            <li>
+                <a href="">项目组自行采购</a>
+            </li>
+            <li>
+                <a href="">采购管部组织采购</a>
+            </li>
+            <li>
+                <a href="">全部</a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

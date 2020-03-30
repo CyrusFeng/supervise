@@ -1,0 +1,120 @@
+html,body{
+    height: 100%;
+}
+.size{
+    width: 100%;
+    height: 4.36rem;
+}
+.swiper-slide img{
+    width: 100%;
+    height: 100%;
+}
+.wrapper .swiper-container .swiper-pagination{
+    bottom: 1.55rem;
+}
+.wrapper .swiper-container .swiper-pagination .swiper-pagination-bullet{
+    width: 0.16rem;
+    height: 0.16rem;
+    background: #fff;
+}
+.wrapper .swiper-container .swiper-pagination .swiper-pagination-bullet-active{
+    background: #fff;
+    opacity: 1.5;
+}
+.info{
+    display: flex;
+    height: 1.26rem;
+    font-size: 0;
+}
+.info > div{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.info > div::after{
+    content: '';
+    background-image: url(../img/text-line.png);
+    display: block;
+    height: 0.6rem;
+    width: 1px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0,-50%);
+}
+.info > div span{
+    font-size: 0.28rem;
+    color: #9b9da4;
+}
+nav{
+    padding: 0.16rem 0.24rem;
+    font-size: 0;
+    background-color: #f4f4f4;
+}
+nav a div{
+    margin-bottom: 0.16rem;
+    height: 1.45rem;
+    border-radius: 0.08rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a:nth-child(1) div{
+    background-color: #9aabf5;
+}
+nav a:nth-child(2) div{
+    background-color: #5c7eff;
+}
+nav a:nth-child(3) div{
+    background-color: #ff9d68;
+    margin-bottom: 0;
+}
+nav div span{
+    font-size: 0.36rem;
+    color: #fff; 
+    position: relative;  
+}
+nav div span::after{
+    content: '';
+    background-image: url(../img/arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    height: 0.3rem;
+    width: 0.16rem;
+    position: absolute;
+    top: 52%;
+    right: -2.5rem;
+    transform: translate(0,-50%); 
+}
+nav div span::before{
+    content: '';
+    /* background-image: url(../img/add.png); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    height: 0.32rem;
+    width: 0.32rem;
+    position: absolute;
+    top: 52%;
+    left: -0.40rem;
+    transform: translate(0,-50%); 
+}
+nav a:nth-child(1) div span::before{
+    background-image: url(../img/add.png);
+}
+nav a:nth-child(2) div span::before{
+    background-image: url(../img/pen.png);
+    height: 0.3rem;
+    width: 0.29rem;
+    top: 58%;
+}
+nav a:nth-child(3) div span::before{
+    background-image: url(../img/watch.png);
+    height: 0.34rem;
+    width: 0.24rem;
+    left: -0.35rem;
+}

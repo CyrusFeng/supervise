@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>督办反馈</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/scale.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        $(document).ready(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            window.onresize = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }
+            $('.tab').on('click', 'li', function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.panel > div').eq($(this).index()).css('display', 'block').siblings().css('display','none');
+            })
+            $('.input').on('input', function () {
+                $('.holder').text('');
+                $('.icon-cancel').css('visibility', 'visible');
+            });
+            var $text = $('.holder').text();
+            $('.icon-cancel').on('click', function () {
+                $('.input').val('');
+                $('.holder').text($text);
+            });
+            var $sel = $('.sort select');
+            $sel.get(0).selectedIndex = -1;
+            $sel.on('change', function () {
+                $(this).prev().text($(this).find('option:selected').text());
+            })
+
+            var arr = $('.tab-body ul li .top p');
+            for (let i = 0; i < arr.length; i++) {
+                var len = arr.eq(i).text().length;
+                if (len>70) {
+                    arr.eq(i).text(arr.eq(i).text().slice(0,70) + '.........');
+                }
+            }
+            var guanzhu = true;
+            $('.tab-body ul li .top a:nth-child(2)').on('click',function(params) {
+                if (guanzhu === true) {
+                    $(this).removeClass('sel').addClass('cancel').text('未关注');
+                    guanzhu = false;
+                }else{
+                    $(this).removeClass('cancel').addClass('sel').text('已关注');
+                    guanzhu = true;
+                }
+                
+                return false;
+            })
+        });
+		function toFeedbackTask(type){
+			window.location='../feedbackTask/feedbackTask.html';
+		}
+    </script>
+</head>
+
+<body>
+    <nav class="indexNav">
+        <ol class="tab">
+            <li class="active">
+                <span>我反馈的任务</span>
+            </li>
+            <li>
+                <span>我下发的任务</span>
+            </li>
+        </ol>
+    </nav>
+    <div class="wrapper">
+        <div class="search">
+            <!-- <div class="show-num">
+                <span>找到相关结果</span>
+                <span>8</span>
+                <span>个</span>
+            </div> -->
+            <form class="" method="get" action="#">
+                <div class="inputcover">
+                    <div class="icon-sousuo icon-common">
+                        <img src="./img/cost-search.png" alt="">
+                    </div>
+
+                    <input type="text" name="search" class="input" placeholder="" value="" id="search">
+                    <label class="holder" for="search">请输入标题关键字或负责人</label>
+
+                    <div class="icon-cancel icon-common" style="visibility: hidden;">
+                        <img src="./img/search-clear.png" alt="">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="sort">
+            <span>默认排序</span>
+            <select name="" id="">
+                <option value="">a</option>
+                <option value="">b</option>
+            </select>
+        </div>
+        <div class="tab-body">
+            <div class="panel">
+                <div class="p1" style="display:block">
+                    <ul>
+                        <li class="item" onclick="toFeedbackTask(id);">
+                            <div class="top">
+								<p>内容</p>
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>完成时限</span>
+                                    <span class="">2017-10-10</span>
+                                </div>
+                                <div class="right">
+                                    <span>监控领导：</span>
+                                    <span>张三</span>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="p2" style="display:none">
+					<ul>
+                        <li class="item" onclick="toFeedbackTask(id);">
+                            <div class="top">
+								<p>内容</p>
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>完成时限</span>
+                                    <span class="">2017-10-10</span>
+                                </div>
+                                <div class="right">
+                                    <span>监控领导：</span>
+                                    <span>张三</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item" onclick="toFeedbackTask(id);">
+                            <div class="top">
+								<p>内容</p>
+                            </div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>完成时限</span>
+                                    <span class="">2017-10-10</span>
+                                </div>
+                                <div class="right">
+                                    <span>监控领导：</span>
+                                    <span>张三</span>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+				</div>
+            </div>
+
+        </div>
+    </div>
+    <footer style="display:none">
+        <ul>
+            <li>
+                <a href="">项目组自行采购</a>
+            </li>
+            <li>
+                <a href="">采购管部组织采购</a>
+            </li>
+            <li>
+                <a href="">全部</a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

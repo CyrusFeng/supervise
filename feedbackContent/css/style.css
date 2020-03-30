@@ -1,0 +1,70 @@
+html,body{
+    height: 100%;
+}
+.wrapper{
+    padding: 0.16rem 0.24rem;
+    height: calc(100% - 1rem);
+    background-color: #f7f7f7;
+}
+.text{
+    padding: 0 0.25rem; 
+    background: #fff;
+    font-size: 0;
+    border-radius: 0.1rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+}
+.text .label{
+    height: 0.9rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.text .label span{
+    color: #797979;
+}
+.text .content{
+    position: relative;
+    height: 5.78rem;
+    padding-top: 0.24rem;
+}
+.text .content span{
+    color: #cfcfcf;
+}
+
+
+.text span {
+    font-size: 0.26rem;
+}
+textarea{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    opacity: 0;
+    font-size: 0.26rem;
+    border: none;
+}
+.form .sub{
+    padding-top: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form .sub a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.98rem;
+    height: 0.68rem;
+    background-color: #5d7eff;
+    font-size: 0.26rem;
+    border-radius: 0.1rem;
+    color: #fff;
+}
+
+

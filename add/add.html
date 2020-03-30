@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>督办新增</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/scale.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        $(document).ready(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            window.onresize = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }
+            var $title = $('.middle .text span').eq(1);
+            var des = $title.text();
+            var $textarea = $('.middle .text textarea');
+
+            $('.middle .text').on('click', function () {
+                $title.text('');
+                $textarea.css('opacity', '1');
+            });
+            $textarea.on('blur', function () {
+                if ($textarea.val() === '') {
+                    $title.text(des);
+                    $textarea.css('opacity', '0');
+                }
+            })
+            var $sel = $('select');
+            $sel.each(function (item) {
+                $(this).get(0).selectedIndex = -1;
+            })
+            $sel.on('change', function () {
+                $(this).prev().text($(this).find('option:selected').text());
+            })
+
+            $('#rili1').on('input', function () {
+                $('.sel7 label').text($('#rili1').val())
+            })
+            $('#rili2').on('input', function () {
+                $('.sel9 label').text($('#rili2').val())
+            })
+
+            $("input[type=text]").on('input',function() {
+
+                $(this).prev().text('')
+            }); 
+            $("input[type=text]").on('blur',function() {
+                if ($(this).val() === '') {                
+                    $(this).prev().text('请输入')
+                }
+            })  
+
+            $('.sub').on('click', function () {
+                localStorage.setItem("in1", $("#in1").val());
+                localStorage.setItem("in5", $("#in5").val());
+                localStorage.setItem("rili1", $("#rili1").val());
+            });         
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <form action="">
+                <div class="top-selects">
+                    <div class="left">
+                        <span>请选择事项类型</span>
+
+                        <select name="" id="">
+                            <option value="">a</option>
+                            <option value="">b</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="middle">
+                    <div class="sel1 sel">
+                        <span>项目名称：</span>
+                        <label for="in1">
+                            请输入                           
+                        </label>
+                        <input type="text" id="in1">
+                        <!-- <ul>
+                            <li>
+                                <span>阿里巴巴</span>
+                            </li>
+                        </ul> -->
+                        
+                    </div>
+                    <div class="sel2 sel">
+                            <span>事项标题：</span>
+                            <label for="in2">
+                                    请输入                           
+                            </label>
+                            <input type="text" id="in2">
+                    </div>
+                    <div class="sel3 sel">
+                            <span>解决人：</span>
+                            <label for="in3">
+                                    请输入                           
+                            </label>
+                            <input type="text" id="in3">
+                    </div>
+                    <div class="sel4 sel">
+                            <span>提交解决单位：</span>
+                            <label for="in4">
+                                    请输入                           
+                            </label>
+                            <input type="text" id="in4">
+                    </div>
+                    <div class="sel5 sel">
+                            <span>抄送人：</span>
+                            <label for="in5">
+                                    请输入                           
+                            </label>
+                            <input type="text" id="in5">
+                    </div>
+                    <div class="sel6 sel">
+                            <span>签发人：</span>
+                            <label for="in6">
+                                    请输入                           
+                            </label>
+                            <input type="text" id="in6">
+                        
+                    </div>
+                    <div class="text">
+                        <div class="label">
+                            <span>事项描述：</span>
+                            <span>点击输入任务内容</span>
+                        </div>
+
+                        <textarea rows="" cols=""></textarea>
+                    </div>
+                    <div class="sel7 sel">
+                            <span>处理期限：</span>
+                            <label for="rili1">
+                                    请选择                           
+                            </label>
+                        <input type="date" id="rili1">
+                    </div>
+                    <div class="sel8 sel">
+                        <span>按周反馈：</span>
+                        <span>请选择</span>
+                        <select name="" id="">
+                            <option value="">按周反馈：</option>
+                            <option value="">按月反馈：</option>
+                            <option value="">按季反馈：</option>
+                            <option value="">按年反馈：</option>
+                        </select>
+                    </div>
+                    <div class="sel9 sel">
+                            <span>提交日期：</span>
+                            <label for="rili2">
+                                    请选择                           
+                            </label>
+                        <input type="date" id="rili2">
+
+                    </div>
+                    <!-- <label class="sel9 sel">
+                        <span>提交日期：</span>
+                        <span>请选择</span>
+                        <input type="date" id="rili2">
+                        
+                        
+                    </label> -->
+                </div>
+            </form>
+
+        </div>
+        <div class="bottom-tab">
+            <ol>
+                <li class="active">
+                    <span><a href="">暂存</a></span>
+                </li>
+                <li>
+
+                </li>
+                <li>
+                    <span><a href="../arrangement/arrangement.html" class="sub">提交</a></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

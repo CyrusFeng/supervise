@@ -1,0 +1,177 @@
+html,body{
+    height: 100%;
+}
+nav ol {
+    display: flex;
+    border-bottom: 0.018115rem solid rgba(0, 0, 0, 0.1);
+}
+
+nav ol li {
+    text-align: center;
+    flex: 1;
+    font-size: 0.27rem;
+    color: #6d6d6d;
+    border-bottom: 0.04rem solid transparent;
+}
+
+nav ol li.active {
+    color: #5d7eff;
+    border-bottom: 0.04rem solid #5d7eff;
+}
+
+nav ol li span {
+    padding: 0.25rem 0;
+    display: inline-block;
+    line-height: 1;
+}
+.wrapper{
+    /* padding: 0 0.24rem; */
+    height: calc(100% - 0.83rem);
+    background-color: #f7f7f7;
+}
+
+.tab-body{
+    position: relative;
+    height: 100%
+}
+
+.tab-body .panel{
+    padding: 0 0.24rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: scroll;
+}
+
+form{
+    padding-top: 0.16rem;
+}
+
+
+
+.top-selects{
+    margin-bottom: 0.16rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0;
+}
+.top-selects div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 0.55rem;
+    position: relative;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    border: 1px solid #bababa;
+}
+.top-selects div::after{
+    content: '';
+    display: block;
+    width: 0.28rem;
+    height: 0.3rem;
+    background-image: url(../img/rili.png);
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 0.22rem;
+    transform: translateY(-50%);
+}
+.top-selects div span{
+    padding-left: 0.22rem;
+    display: inline-block;
+    font-size: 0.26rem;
+    color: #a4a4a4;
+}
+.top-selects label{
+    display: block;
+    width: 100%;
+}
+
+.top-selects input{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    font-size: 0.25rem;
+}
+
+
+
+.text{
+    padding: 0 0.25rem; 
+    background: #fff;
+    font-size: 0;
+    border-radius: 0.1rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+}
+.text .label{
+    height: 0.9rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.text .label span{
+    color: #797979;
+}
+.p1 .text .content{
+    position: relative;
+    height: 5.78rem;
+    padding-top: 0.24rem;
+}
+.p2 .text .content{
+    position: relative;
+    height: 5.78rem;
+    padding-top: 0.24rem;
+}
+.p3 .text .content{
+    position: relative;
+    height: 5.78rem;
+    padding-top: 0.24rem;
+}
+.text .content span{
+    color: #cfcfcf;
+}
+
+
+.text span {
+    font-size: 0.26rem;
+}
+textarea{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    opacity: 0;
+    font-size: 0.26rem;
+    border: none;
+}
+.sub{
+    padding-top: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.98rem;
+    height: 0.68rem;
+    background-color: #5d7eff;
+    font-size: 0.26rem;
+    border-radius: 0.1rem;
+    color: #fff;
+}
+

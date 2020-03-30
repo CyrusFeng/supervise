@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="js/swiper-3.4.2.jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <script>
+        $(document).ready(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                // autoplay: 3000, //可选选项，自动滑动
+                pagination: '.swiper-pagination'
+            })
+
+        });
+		function toArrangement(type){
+			window.location='../arrangement/arrangement.html';
+		}
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide size">
+                    <img src="./img/slider1.png" alt="">
+                    <div class="info">                
+                            <div onclick = "toArrangement(1);">
+                                <span>已完成</span>
+                                <span>1项</span>
+                            </div>
+                            <div onclick = "toArrangement(2);">
+                                <span>执行中</span>
+                                <span>0项</span>
+                            </div>
+                            <div onclick = "toArrangement(3);">
+                                <span>超时</span>
+                                <span>0项</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="swiper-slide size">
+                    <img src="./img/slider1.png" alt="">
+                    <div class="info">
+                        
+                            <div onclick = "toArrangement(1);">
+                                <span>已完成</span>
+                                <span>1项</span>
+                            </div>
+                            <div onclick = "toArrangement(2);">
+                                <span>执行中</span>
+                                <span>0项</span>
+                            </div>
+                            <div onclick = "toArrangement(3);">
+                                <span>超时</span>
+                                <span>0项</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        
+        <nav>
+            <a href="../add/add.html">
+                <div>
+                    <span>督办新增</span>
+                </div>
+            </a>
+            <a href="../feedback/feedback.html">
+                <div>
+                    <span>督办反馈</span>
+                </div>
+            </a>
+            <a href="../watch/watch.html">
+                <div>
+                    <span>督办监控</span>
+                </div>
+            </a>
+        </nav>
+    </div>
+
+
+
+    <script src="./js/swiper-3.4.2.jquery.min.js"></script>
+    <script src="./js/scale.js"></script>
+</body>
+
+</html>

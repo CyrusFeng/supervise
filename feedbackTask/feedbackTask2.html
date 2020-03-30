@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>反馈任务</title>
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/scale.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .wrapper{
+            height: 100% !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            window.onresize = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+            }
+            var $title = $('.middle .text span').eq(1);
+            var des = $title.text();
+            console.log(des);
+            var $textarea = $('.middle .text textarea');
+            
+            $('.middle .text').on('click', function () {
+                $title.text('');
+                $textarea.css('opacity', '1');
+            });
+            $textarea.on('blur',function() {
+                if ($textarea.val() === '') {
+                    $title.text(des);
+                    $textarea.css('opacity', '0');
+                }
+            })
+            var $sel = $('select');
+            $sel.each(function(item) {
+                $(this).get(0).selectedIndex = -1;
+            }) 
+            $sel.on('change', function () {
+                $(this).prev().text($(this).find('option:selected').text());
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <form action="">
+               
+
+                <div class="middle">
+                    <div class="sel1 sel">
+                        <span>项目名称：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="sel2 sel">
+                        <span>事项标题：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="sel3 sel">
+                        <span>发起人：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="sel4 sel">
+                        <span>解决人：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="sel5 sel">
+                        <span>提交解决单位：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="sel6 sel">
+                        <span>抄送人：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="sel7 sel">
+                        <span>签发人：</span>
+                        <span>xxxxxxxxxx</span>
+                    </div>
+                    <div class="text">
+                        <div class="label">
+                            <span>事项描述：</span>
+                            <span>xxxxxxxxx</span>
+                        </div>
+
+                        <textarea rows="" cols=""></textarea>
+                    </div>
+                    <div class="sel8 sel">
+                        
+                        <label for="rili1">
+                            <span>处理期限：</span>
+                            <span>xxxxxxxxxx</span>
+                        </label>
+                    </div>
+                    <div class="sel9 sel">
+                        <label for="rili2">
+                            <span>提交日期：</span>
+                            <span>xxxxxxxxxx</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
